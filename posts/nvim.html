@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="codestyles.css"/>
+	<title>waltermastk</title>
+</head>
+<body>
+    
+
+<p><a href="https://neovim.io/doc/user/index.html">Help</a> <br />
+<a href="https://learnvimscriptthehardway.stevelosh.com/">Book</a>   </p>
+<h3>Archivo de configuracion</h3>
+<p>/home/waltermas/.config/nvim/init.vim</p>
+<h3>vim-plug</h3>
+<div class="codehilite"><pre><span></span><code>sh -c <span class="s1">&#39;curl -fLo &quot;${XDG_DATA_HOME:-$HOME/.local/share}&quot;/nvim/site/autoload/plug.vim --create-dirs \</span>
+<span class="s1">       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim&#39;</span>
+</code></pre></div>
+
+<p>:PlugInstall  </p>
+<h3>Coc</h3>
+<p><a href="https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions">coc-extensions</a>  </p>
+<div class="codehilite"><pre><span></span><code>curl -sL install-node.now.sh/lts <span class="p">|</span> bash  <span class="c1">#para coc</span>
+</code></pre></div>
+
+<p>:cocList extensions  </p>
+<h3>COMANDOS</h3>
+<p>:w write<br />
+:e edit, abre un archivo<br />
+:tabnew<br />
+:r retrieve pega un archivo<br />
+:! ejecuta un comando<br />
+:.! salida del comando a vim  </p>
+<h3>MOVERSE</h3>
+<p>numero +<br />
+numero -<br />
+numero %, va hasta el porcentaje  </p>
+<p>w b   moverse entre palabras<br />
+e     end of the word<br />
+f F   saltar a letra  </p>
+<p>H high<br />
+M ir al medio<br />
+L low  </p>
+<p>control u, moverse up<br />
+control d, moverse down<br />
+control y, scroll up<br />
+control e, scroll down<br />
+control o, vuelve donde estaba despues de un salto  </p>
+<p>control u en insert borra hasta el principio de la linea  </p>
+<p>gt cambia de tab<br />
+gg va al principio<br />
+G va al final<br />
+:numero ---salta a esa linea<br />
+:+14,+18 co .   --- copia la linea relativa 14 a 18 aqui  </p>
+<p>:+14y  copia linea relativa 14<br />
+:+4d   borrar linea relativa 4  </p>
+<p>d4k   borra 4 lineas para arriba   </p>
+<p>0 principio de linea<br />
+$ final de linea<br />
+= easymotion =<br />
+leader f: search one character<br />
+leader s: search two character<br />
+leader l: jump to line
+leader w: jump to word</p>
+<h3>INSERT</h3>
+<p>i - I insert at the beggining of the line<br />
+a append - A append at the end of the line<br />
+o nueva linea - O nueva linea arriba  </p>
+<p>x borra bajo el cursor<br />
+d delete<br />
+dw borra una palabra<br />
+dd corta toda la linea  </p>
+<p>p paste<br />
+y copy<br />
+yy yank a line<br />
+yiw yank in word copia la palabra bajo el cursor<br />
+espacio y, lista de yanks, from coc-yank  </p>
+<p>u undo<br />
+control-r redo<br />
+. repeat<br />
+/ search , n next, N previous<br />
+? seach backwards<br />
+* busca siguiente palabra bajo el cursor  </p>
+<p>shift v visual line mode  </p>
+<p>cw change word<br />
+ciw change entire word<br />
+cc change line<br />
+dw  delete word<br />
+ci( change inside parentesis<br />
+yt,    yank till , </p>
+<p>vib select inner block<br />
+vi" select inside quotes  </p>
+<h3>REGISTERS</h3>
+<p>:registers<br />
+"ayy  copia linea en register a<br />
+"ap   pega linea del register a<br />
+control r a en insert mode  </p>
+<h3>MARKS</h3>
+<p>:marks<br />
+ma marca donde esta el cursor, lo almacena en a<br />
+'a va hasta el marcador a (linea)<br />
+`a va hasta el marcador a (lugar exacto)<br />
+markbar: leader m    toggle markbar</p>
+<h3>FZF</h3>
+<p>:FZF<br />
+:Files  abre archivo con preview<br />
+:Rg   busca string dentro de los archivos<br />
+:BLines busca string dentro de archivo abierto<br />
+:Lines leader f busca string dentro de todos los buffers<br />
+:History:
+:Buffers
+:Marks</p>
+<p>:colorscheme <tab>  </p>
+<p>:buffers<br />
+:b <tab> para cambiar buffers
+leader b</p>
+<p>:history  </p>
+<p>leader e   coc-explorer</p>
+<h3>EMMET</h3>
+<p>html:5 <ctrl-y>,  expande html<br />
+div<br />
+p<br />
+a<br />
+img  </p>
+<h3>TABS</h3>
+<p>tn :tabnew<br />
+tl :tabnext<br />
+th :tabprevious  </p>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

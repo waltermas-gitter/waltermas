@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="codestyles.css"/>
+	<title>waltermastk</title>
+</head>
+<body>
+    
+
+<p><a href="https://github.com/sharkdp/bat">bat</a><br />
+<strong><em>a cat replacement</em></strong></p>
+<h3>install</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># arch</span>
+pacman -S bat
+
+<span class="c1"># ubuntu, executable: batcat</span>
+apt install bat 
+</code></pre></div>
+
+<h3>plain output</h3>
+<div class="codehilite"><pre><span></span><code>bat -p file
+bat --plain file
+</code></pre></div>
+
+<p>Nice oneliner to show all themes preview with fzf:</p>
+<div class="codehilite"><pre><span></span><code>bat --list-themes <span class="p">|</span> fzf --preview<span class="o">=</span><span class="s2">&quot;bat --theme={} --color=always posteos.md&quot;</span>
+<span class="c1">#To set a theme:</span>
+<span class="nb">export</span> <span class="nv">BAT_THEME</span><span class="o">=</span><span class="s2">&quot;TwoDark&quot;</span>
+</code></pre></div>
+
+<hr />
+<p><a href="https://the.exa.website">exa</a><br />
+<strong><em>a ls replacement</em></strong></p>
+<h3>install</h3>
+<p>Just download and place on bin folder</p>
+<div class="codehilite"><pre><span></span><code>exa --all
+exa --recurse or -R
+exa -l  <span class="c1">#long</span>
+exa -1 <span class="c1">#one per line</span>
+exa --header
+exa --tree
+exa --git
+exa --icons
+</code></pre></div>
+
+<h3>custom colors:</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">LS_COLORS</span><span class="o">=</span><span class="s2">&quot;*.html=37;41&quot;</span>
+</code></pre></div>
+
+<hr />
+<p><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a></p>
+<div class="codehilite"><pre><span></span><code>rg text <span class="c1">#recursive by default</span>
+rg <span class="s1">&#39;regular expression&#39;</span>
+rg <span class="s1">&#39;glob expression&#39;</span>
+
+--hidden
+-i/--ignore-case
+
+rg text --type <span class="nv">html</span>  <span class="o">=</span>  rg text -html
+rg text --type-not <span class="nv">html</span>  <span class="o">=</span>  rg text -Html
+rg --type-list
+
+rg fast README.md --replace <span class="nv">FAST</span> <span class="o">=</span> rg fast README.md -r FAST
+</code></pre></div>
+
+<hr />
+<p><a href="https://github.com/sharkdp/fd">fd</a></p>
+<p><strong><em>find replacement</em></strong></p>
+<div class="codehilite"><pre><span></span><code>fd text  <span class="c1">#recursively</span>
+fd <span class="s1">&#39;regular expression&#39;</span>
+
+fd text /directory
+
+fd --extension <span class="nv">md</span>  <span class="o">=</span>  fd -e md
+--hidden <span class="o">=</span> -H
+
+-x/--exec option runs an external <span class="nb">command</span> <span class="k">for</span> each of the search results
+-X/--exec-batch runs once <span class="k">for</span> all results
+
+--exclude <span class="o">=</span> -E  <span class="c1">#exclude directory</span>
+</code></pre></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

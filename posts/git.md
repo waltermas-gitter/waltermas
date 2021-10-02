@@ -1,8 +1,3 @@
-```html
-
-<html lang="en">
-  <head>
-```
 ```shell
 git clone git@gitlab.com:waltergroup/test.git
 git status

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="codestyles.css"/>
+	<title>waltermastk</title>
+</head>
+<body>
+    
+
+<p>Pasos que segui:  </p>
+<div class="codehilite"><pre><span></span><code>git init --bare <span class="nv">$HOME</span>/.cfg
+<span class="nb">alias</span> <span class="nv">config</span><span class="o">=</span><span class="s1">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span>
+config config --local status.showUntrackedFiles no
+<span class="nb">echo</span> <span class="s2">&quot;alias config=&#39;/usr/bin/git --git-dir=</span><span class="nv">$HOME</span><span class="s2">/.cfg/ --work-tree=</span><span class="nv">$HOME</span><span class="s2">&#39;&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.zshrc
+
+config remote add origin git@gitlab.com:waltermas/kiss2configfiles.git
+config push --set-upstream origin master
+</code></pre></div>
+
+<p><a href="https://www.atlassian.com/git/tutorials/dotfiles">tutorial</a></p>
+<p>Para ver archivos que sigo:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> config ls-tree -r master --name-only
+</code></pre></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

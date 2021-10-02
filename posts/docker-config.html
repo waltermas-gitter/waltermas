@@ -9,8 +9,19 @@
 	<title>waltermastk</title>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    
+
+<p>Como cambiar la carpeta donde guarda las imagenes docker por default.  </p>
+<div class="codehilite"><pre><span></span><code>sudo nvim /etc/docker/daemon.json
+</code></pre></div>
+
+<p>Crear el archivo si no existe.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">{</span>
+  <span class="s2">&quot;data-root&quot;</span>: <span class="s2">&quot;/run/media/SATURN/docker-images&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
