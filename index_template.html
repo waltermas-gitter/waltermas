@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+
 <p>waltermas.tk</p>
-{{markdowntext}}
+{% for post in posteos %} 
+<a href="/posteoshtml/{{post}}.md" class="btn btn-success">post Button</a>
+{% endfor %} 
+
 {% endblock %}

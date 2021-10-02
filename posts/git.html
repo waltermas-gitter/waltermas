@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="codestyles.css"/>
+	<title>Document</title>
+</head>
+<body>
+    
+
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>git clone git@gitlab.com:waltergroup/test.git
+git status
+git add -u , git add ., git add -A
+git commit -m <span class="s2">&quot;mensaje&quot;</span>
+git push
+
+git remote -v update <span class="c1">#para ver si hay cambios en remote</span>
+git pull <span class="o">(</span>fetch + merge<span class="o">)</span>  
+git log
+
+git branch mirama
+git checkout mirama  <span class="c1">#switch to mirama</span>
+git checkout master <span class="c1">#vuelve a master</span>
+git push -u origin mirama
+git merge mirama <span class="c1">#desde master</span>
+git push origin --delete mirama <span class="c1">#borra rama en gitlab</span>
+git branch -d mirama <span class="c1">#borra mirama local</span>
+
+<span class="c1">### create repo from command line </span>
+git init
+git add -A
+git commit -m <span class="s2">&quot;initial commit&quot;</span>
+git remote add origin git@gitlab.com:waltermas/wtagger.git
+git push -u origin master
+
+git fetch <span class="c1">#actualiza</span>
+git branch --list <span class="c1">#local</span>
+git branch -r <span class="c1">#remotes</span>
+git branch -a <span class="c1">#all</span>
+
+git ls-tree -r master --name-only <span class="c1">#list tracked files</span>
+
+<span class="c1">## restore  </span>
+git restore file <span class="c1"># deshace los cambios al ultimo commit</span>
+git commit --amend -m <span class="s2">&quot;Este es el mensaje correcto&quot;</span>  
+
+<span class="c1">## añadir mas cambios al ultimo commit:  </span>
+git add src/archivo-con-cambios.js
+git commit --amend -m <span class="s2">&quot;Mensaje del commit&quot;</span>  
+
+
+git reset --hard HEAD~1 <span class="c1">#borra el ultimo commit, deja los archivos como estaba antes</span>
+git reset --soft HEAD~1 <span class="c1">#borra el ultimo commit sin tocar los archivos</span>
+git revert 74a1092 <span class="c1">#para una vez hecho el push  </span>
+</code></pre></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

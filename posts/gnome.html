@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="codestyles.css"/>
+	<title>Document</title>
+</head>
+<body>
+    
+
+<p><strong>Themes</strong><br />
+<a href="https://www.gnome-look.org/browse/cat/">gnome look org</a><br />
+en carpetas:<br />
+~/.icons<br />
+~/.themes</p>
+<p><strong>Desktop entry</strong>  </p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Encoding</span><span class="o">=</span>UTF-8
+<span class="nv">Version</span><span class="o">=</span><span class="m">1</span>.0
+<span class="nv">Name</span><span class="o">=</span>Locker
+<span class="nv">GenericName</span><span class="o">=</span>Locker
+<span class="nv">Comment</span><span class="o">=</span>my fast lock app
+<span class="nv">Exec</span><span class="o">=</span>/home/waltermas/MEGAsync/scripts/locker.sh
+<span class="nv">Icon</span><span class="o">=</span>/home/waltermas/.icons/iconfinder_icon-118-lock-rounded_314696.png
+<span class="nv">Categories</span><span class="o">=</span>GNOME<span class="p">;</span>Application<span class="p">;</span>
+</code></pre></div>
+
+<p><a href="https://wiki.archlinux.org/title/desktop_entries">desktop entry documentation</a></p>
+<p>En <em>/usr/share/applications</em>{: style="color: blue"} van las entradas de menu<br />
+En <em>~/.local/share/applications</em>{: style="color: blue"} van las entradas de menu para el usuario<br />
+En <em>~/.config/autostart</em>{: style="color: blue"} van los programas al inicio</p>
+<p><strong>dconf-editor</strong><br />
+Para configurar atajos<br />
+/org/gnome/desktop/wm/keybindings/switch-applications</p>
+<p>Para cambiar el tamaño del cursor:<br />
+dconf write /org/gnome/desktop/interface/cursor-size 48</p>
+<p>Borro trash del dock:<br />
+/org/gnome/shell/extensions/dash-to-dock/show-trash</p>
+<p><strong>Custom launcher for VM</strong></p>
+<div class="codehilite"><pre><span></span><code>VBoxManage setextradata global GUI/DistinguishMachineWindowGroups <span class="nb">true</span>
+xprop WM_CLASS
+<span class="c1">#WM_CLASS(STRING) = &quot;VirtualBox Machine UUID: {9c1f2428-9e1d-43cb-a3f8-3f0967bfa190}&quot;, &quot;VirtualBox Machine&quot;</span>
+
+<span class="c1">#In ~/.local/share/applications/lubuntu21.desktop</span>
+<span class="o">[</span>Desktop Entry<span class="o">]</span>
+<span class="nv">Encoding</span><span class="o">=</span>UTF-8
+<span class="nv">Version</span><span class="o">=</span><span class="m">1</span>.0
+<span class="nv">Name</span><span class="o">=</span>lubuntu <span class="m">21</span>
+<span class="nv">Comment</span><span class="o">=</span>Starts the VirtualBox machine lubuntu <span class="m">21</span>
+<span class="nv">Type</span><span class="o">=</span>Application
+<span class="nv">Exec</span><span class="o">=</span>/usr/lib/virtualbox/VirtualBoxVM --comment <span class="s2">&quot;lubuntu 21&quot;</span> --startvm <span class="s2">&quot;{9c1f2428-9e1d-43cb-a3f8-3f0967bfa190}&quot;</span>
+<span class="nv">Icon</span><span class="o">=</span>lubuntu_logo
+<span class="nv">StartupWMClass</span><span class="o">=</span>VirtualBox Machine UUID: <span class="o">{</span>9c1f2428-9e1d-43cb-a3f8-3f0967bfa190<span class="o">}</span>
+</code></pre></div>
+
+<p>gtk-launch  </p>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
