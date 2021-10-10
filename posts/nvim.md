@@ -153,4 +153,8 @@ tn :tabnew
 tl :tabnext  
 th :tabprevious  
 
+### MAPPINGS
+:verbose vmap i 
 
+### ultisnipedit
+👆 genial

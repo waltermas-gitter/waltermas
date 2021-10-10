@@ -21,9 +21,9 @@ Categories=GNOME;Application;
 [desktop entry documentation](https://wiki.archlinux.org/title/desktop_entries)
 
 
-En */usr/share/applications*{: style="color: blue"} van las entradas de menu  
-En *~/.local/share/applications*{: style="color: blue"} van las entradas de menu para el usuario  
-En *~/.config/autostart*{: style="color: blue"} van los programas al inicio
+En */usr/share/applications* van las entradas de menu  
+En *~/.local/share/applications*van las entradas de menu para el usuario  
+En *~/.config/autostart* van los programas al inicio
 
 **dconf-editor**  
 Para configurar atajos  
@@ -55,3 +55,4 @@ StartupWMClass=VirtualBox Machine UUID: {9c1f2428-9e1d-43cb-a3f8-3f0967bfa190}
 ```
 
 gtk-launch  
+
